@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"MMR Decay\"\nauthor: \"Dominic Mullen\"\ndate: \"October 13, 2016\"\noutput:\n  html_document:\n    theme: readable \n    highlight: tango \n---\n  \n  ```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)\n```\n\n## {.tabset .tabset-pills}\n\n### Overview\n\nThis analysis looks at users' matchmaking rating decay during periods of inactivity.  This was done to get a better sense of if and how periods of inactivity affect relative skill in order to improve matchmaking for users with periods of inactivity or churn.  \n\n**Questions**: \n\n* _Do users experience mmr decay after periods of inactivity?_  \n* _For users who do,_ \n+ _Is there a relationship between user liftime prior to churn and mmr decay?_\n+ _Is there a relationship between the duration of the user's period of inactivity and mmr decay?_\n\n```{r, message=FALSE, results='hide'} \nsource(\"mmr_decay.R\")\n```\n\n\n```{r fig.width=9, fig.height=4}\ng1 <- ggplot(mmrData2, aes(x = final_mmr_diff)) + \n  geom_histogram(aes(fill = ..count..)) + \n  ggtitle(\"Pre and post churn 5 game average MMR Difference\") \nggplotly(g1)\n\n```\n",
+    "created" : 1476396373019.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2271303263",
+    "id" : "607A7507",
+    "lastKnownWriteTime" : 1476397833,
+    "last_content_update" : 1476397833510,
+    "path" : "~/Documents/R_Projects/MMR Decay/mmr_decay.rmd",
+    "project_path" : "mmr_decay.rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
